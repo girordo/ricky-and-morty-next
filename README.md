@@ -21,7 +21,7 @@
 
 - [React](https://pt-br.reactjs.org/)
 - [Eslint](https://eslint.org/), [Prettier](https://prettier.io/), [EditorConfig](http://editorconfig.org)
-- [Docker](https://www.docker.com/)
+- [Docker](https://www.docker.com/) (Ainda não configurei o docker pois estou com preguiça)
 - [Tailwind](https://tailwindcss.com/)
 
 ### Como usar
