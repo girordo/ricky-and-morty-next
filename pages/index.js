@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import Footer from "./components/Footer";
 import Link from "next/link";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 const defaultEndpoint = "https://rickandmortyapi.com/api/character";
 
 export async function getServerSideProps() {
@@ -63,7 +64,7 @@ const Home = ({ data }) => {
         <title>Rick and Morty API with Next</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Header />
       <main className="flex flex-col items-center justify-center flex-1 px-20 text-center mb-10">
         <h1 className="text-6xl font-bold">
           Mais um caso de estudo com

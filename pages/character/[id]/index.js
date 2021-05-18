@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../../components/Footer";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import dayjs from "dayjs";
-import Head from "next/head";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const defaultEndpoint = "https://rickandmortyapi.com/api/character";
 
@@ -31,15 +32,13 @@ const Character = () => {
     fetchData();
   }, []);
 
-  const { location } = characterData;
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
         <title>{characterData.name}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Header />
       <main className="flex flex-col justify-center flex-1 px-20 mb-10">
         <div className="flex flex-row">
           <img
@@ -64,7 +63,10 @@ const Character = () => {
                 <h4>Gender: {characterData.gender}</h4>
               </li>
               <li>
-                <h4>Location: {location.name}</h4>
+                <h4>Location: {characterData.location?.name}</h4>
+              </li>
+              <li>
+                <h4>Origin: {characterData.origin?.name}</h4>
               </li>
               <li>
                 <h4>
