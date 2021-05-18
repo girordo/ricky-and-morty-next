@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import Head from 'next/head';
-import Footer from './components/Footer';
-import Link from 'next/link';
-const defaultEndpoint = 'https://rickandmortyapi.com/api/character';
+import React, { useEffect, useState } from "react";
+import Head from "next/head";
+import Footer from "./components/Footer";
+import Link from "next/link";
+const defaultEndpoint = "https://rickandmortyapi.com/api/character";
 
 export async function getServerSideProps() {
   const res = await fetch(defaultEndpoint);
@@ -91,8 +91,7 @@ const Home = ({ data }) => {
         </div>
         <button
           className="mt-10 mb-10 p-4 bg-green-400 rounded-md shadow-lg text-center text-white"
-          onClick={onLoadMore}
-        >
+          onClick={onLoadMore}>
           Carregar mais
         </button>
       </main>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
   return (
@@ -9,8 +9,7 @@ const Footer = () => {
             className="flex"
             href="https://netlify.com"
             target="_blank"
-            rel="noopener noreferrer"
-          >
+            rel="noopener noreferrer">
             Powered by
             <img src="/netlify.svg" alt="Netlify Logo" className="h-6 ml-2" />
           </a>
@@ -26,8 +25,7 @@ const Footer = () => {
               className="flex-col mx-2"
               href="https://github.com/girordo"
               target="_blank"
-              rel="noreferrer"
-            >
+              rel="noreferrer">
               /girordo
             </a>
           </div>

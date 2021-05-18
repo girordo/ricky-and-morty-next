@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import Footer from '../../components/Footer';
-import { useRouter } from 'next/router';
-import Head from 'next/head';
+import React, { useEffect, useState } from "react";
+import Footer from "../../components/Footer";
+import { useRouter } from "next/router";
+import Head from "next/head";
 
-const defaultEndpoint = 'https://rickandmortyapi.com/api/character';
+const defaultEndpoint = "https://rickandmortyapi.com/api/character";
 
 export async function getServerSideProps() {
   const res = await fetch(defaultEndpoint);
