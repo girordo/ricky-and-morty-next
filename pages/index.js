@@ -89,7 +89,7 @@ const Home = ({ data }) => {
           ))}
         </div>
         <button
-          className="mt-10 mb-10 p-4 rounded-md shadow-lg text-center"
+          className="mt-10 mb-10 p-4 bg-green-400 rounded-md shadow-lg text-center text-white"
           onClick={onLoadMore}>
           Carregar mais
         </button>
@@ -102,9 +102,25 @@ const Home = ({ data }) => {
           target="_blank"
           rel="noopener noreferrer">
           Powered by
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
+          <img src="/netlify.svg" alt="Netlify Logo" className="h-6 ml-2" />
         </a>
       </footer>
+      <div>
+        <p className="mx-2">
+          Made with
+          <span aria-label="Heart Purple Emoji" role="img" className="mx-2">
+            💜
+          </span>
+          by
+        </p>
+        <a
+          className="flex-col mx-2"
+          href="https://github.com/girordo"
+          target="_blank"
+          rel="noreferrer">
+          /girordo
+        </a>
+      </div>
     </div>
   );
 };
