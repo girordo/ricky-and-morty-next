@@ -1,8 +1,25 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
+import { useRouter } from "next/router";
 import Head from "next/head";
 
-const Character = ({ name, image, species, gender, status }) => {
+const defaultEndpoint = "https://rickandmortyapi.com/api/character";
+
+export async function getServerSideProps() {
+  const res = await fetch(defaultEndpoint);
+  const data = await res.json();
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+const Character = () => {
+  const router = useRouter();
+  const { id } = router.query;
+  const [characterData, setCharacterData] = useState({});
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
