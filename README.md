@@ -1,7 +1,6 @@
 <div align="center">
    <img
     src="https://media.giphy.com/media/WOYKaXG2xJsBO/giphy.gif"
-    width="20%"
     alt="Logo Tailwind Ricky and Morty"
    />
    <p>Só um app pra mostrar a API do Ricky e Morty</p>
