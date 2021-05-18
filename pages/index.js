@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import Head from "next/head";
-import Footer from "./components/Footer";
-import Link from "next/link";
-const defaultEndpoint = "https://rickandmortyapi.com/api/character";
+import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
+import Footer from './components/Footer';
+import Link from 'next/link';
+const defaultEndpoint = 'https://rickandmortyapi.com/api/character';
 
 export async function getServerSideProps() {
   const res = await fetch(defaultEndpoint);
@@ -75,10 +75,10 @@ const Home = ({ data }) => {
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
           {results.map(({ id, name, image, status, species, gender }) => (
             <Link key={id} href="/character/[id]" as={`/character/${id}`}>
-              <a className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-green-400 hover:border-green-400 focus:text-green-400 shadow-md">
+              <a className="p-6 mt-6 text-left border rounded-xl hover:text-green-400 hover:border-green-400 focus:text-green-400 shadow-md">
                 <img
                   src={image}
-                  className="rounded-2xl"
+                  className="rounded-2xl mr-10"
                   alt="Character from Rick and Morty"
                 />
                 <h3 className="text-2xl mt-4 font-bold">{name}</h3>
@@ -91,7 +91,8 @@ const Home = ({ data }) => {
         </div>
         <button
           className="mt-10 mb-10 p-4 bg-green-400 rounded-md shadow-lg text-center text-white"
-          onClick={onLoadMore}>
+          onClick={onLoadMore}
+        >
           Carregar mais
         </button>
       </main>
