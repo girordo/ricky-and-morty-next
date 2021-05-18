@@ -35,6 +35,6 @@ $ git clone
 $ cd
 
 # Executar o projeto
-$ yarn start
+$ yarn dev
 
 ```
