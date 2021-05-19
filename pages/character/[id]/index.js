@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import dayjs from "dayjs";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -63,7 +64,9 @@ const Character = () => {
                 <h4>Gender: {characterData.gender}</h4>
               </li>
               <li>
-                <h4>Location: {characterData.location?.name}</h4>
+                <Link key={id} href="/character/[id]" as={`/character/${id}`}>
+                  <h4>Location: {characterData.location?.name}</h4>
+                </Link>
               </li>
               <li>
                 <h4>Origin: {characterData.origin?.name}</h4>
