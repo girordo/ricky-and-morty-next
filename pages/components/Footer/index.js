@@ -10,7 +10,7 @@ const Footer = () => {
             href="https://netlify.com"
             target="_blank"
             rel="noopener noreferrer">
-            Powered
+            Powered by
             <img src="/netlify.svg" alt="Netlify Logo" className="h-6 ml-2" />
           </a>
           <div className="flex mt-4">
