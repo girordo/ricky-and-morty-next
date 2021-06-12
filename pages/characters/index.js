@@ -69,7 +69,7 @@ const Characters = ({ data }) => {
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
           {results.map(({ id, name, image, status, species, gender }) => (
             <Link key={id} href="/character/[id]" as={`/character/${id}`}>
-              <a className="p-6 mt-6 text-left border rounded-xl hover:text-green-400 hover:border-green-400 focus:text-green-400 shadow-md">
+              <a className="p-6 mt-6 text-left border rounded-xl hover:text-green-400 hover:border-green-400 focus:text-green-400 shadow-md transition-colors">
                 <img
                   src={image}
                   className="rounded-2xl mr-10"

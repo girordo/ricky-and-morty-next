@@ -34,6 +34,7 @@ const Home = () => {
             Next.js!
           </a>
         </h1>
+        <Link href="/characters">Veja aqui os personagens</Link>
       </main>
       <Footer />
     </div>
