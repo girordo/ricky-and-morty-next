@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <nav className="w-full h-24 flex items-center justify-center border-b mb-10">
+    <nav className="w-full h-24 sticky top-0 z-50 flex items-center justify-center border-b mb-10 shadow-lg">
       Aqui é o cabeçalho treta
     </nav>
   );

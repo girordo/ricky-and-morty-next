@@ -11,6 +11,7 @@
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "dependencies": {
+    "@testing-library/react": "^11.2.7",
     "dayjs": "^1.10.4",
     "next": "latest",
     "prop-types": "^15.7.2",
