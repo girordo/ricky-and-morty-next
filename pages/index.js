@@ -24,7 +24,7 @@ const Home = () => {
       </Head>
       <Header />
       <main className="flex flex-col items-center justify-center flex-1 px-20 text-center mb-10">
-        <h1 className="text-6xl font-bold">
+        <h1 className="text-6xl font-bold mb-10">
           Mais um caso de estudo com
           <a
             className="ml-4 text-green-400 hover:text-green-800 transition-colors"
@@ -34,7 +34,11 @@ const Home = () => {
             Next.js!
           </a>
         </h1>
-        <Link href="/characters">Veja aqui os personagens</Link>
+        <Link href="/characters">
+          <h1 className="text-2xl font-bold hover:text-green-400 transition-colors">
+            Veja aqui os personagens
+          </h1>
+        </Link>
       </main>
       <Footer />
     </div>
