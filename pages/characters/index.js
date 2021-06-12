@@ -59,7 +59,7 @@ const Characters = ({ data }) => {
   }, [current]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
         <title>Rick and Morty API with Next</title>
         <link rel="icon" href="/favicon.ico" />
@@ -68,7 +68,7 @@ const Characters = ({ data }) => {
       <main className="flex flex-col items-center justify-center flex-1 px-20 text-center mb-10">
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
           {results.map(({ id, name, image, status, species, gender }) => (
-            <Link key={id} href="/character/[id]" as={`/character/${id}`}>
+            <Link key={id} href="/characters/[id]" as={`/characters/${id}`}>
               <a className="p-6 mt-6 text-left border rounded-xl hover:text-green-400 hover:border-green-400 focus:text-green-400 shadow-md transition-colors">
                 <img
                   src={image}

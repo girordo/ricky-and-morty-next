@@ -45,7 +45,7 @@ const Character = () => {
           <img
             src={characterData.image}
             alt="Character Data"
-            className="rounded-lg"
+            className="rounded-lg shadow-lg"
           />
           <div className="flex flex-col ml-8">
             <ul>

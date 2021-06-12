@@ -17,7 +17,7 @@ export async function getServerSideProps() {
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
         <title>Rick and Morty API with Next</title>
         <link rel="icon" href="/favicon.ico" />
