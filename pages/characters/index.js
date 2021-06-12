@@ -66,13 +66,6 @@ const Characters = ({ data }) => {
       </Head>
       <Header />
       <main className="flex flex-col items-center justify-center flex-1 px-20 text-center mb-10">
-        <h1 className="text-6xl font-bold">
-          Mais um caso de estudo com
-          <a className="ml-4 text-green-400" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
           {results.map(({ id, name, image, status, species, gender }) => (
             <Link key={id} href="/character/[id]" as={`/character/${id}`}>
