@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import useInfiniteScroll from "../../hooks/useInfiniteScroll";
 const defaultEndpoint = "https://rickandmortyapi.com/api/character";
 
 export async function getStaticProps() {
@@ -22,6 +23,18 @@ const Characters = ({ data }) => {
     ...info,
     current: defaultEndpoint,
   });
+  const onLoadMore = () => {
+    setTimeout(() => {
+      setPage((prev) => {
+        return {
+          ...prev,
+          current: page?.next,
+        };
+      });
+      setIsFetching(false);
+    }, 2000);
+  };
+  const [isFetching, setIsFetching] = useInfiniteScroll(onLoadMore);
 
   const { current } = page;
 
@@ -41,15 +54,6 @@ const Characters = ({ data }) => {
 
     setResults((prev) => {
       return [...prev, ...nextData.results];
-    });
-  };
-
-  const onLoadMore = () => {
-    setPage((prev) => {
-      return {
-        ...prev,
-        current: page?.next,
-      };
     });
   };
 
@@ -83,11 +87,6 @@ const Characters = ({ data }) => {
             </Link>
           ))}
         </div>
-        <button
-          className="mt-10 mb-10 p-4 bg-green-400 rounded-md shadow-lg text-center text-white"
-          onClick={onLoadMore}>
-          Carregar mais
-        </button>
       </main>
       <Footer />
     </div>
