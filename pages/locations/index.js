@@ -4,7 +4,7 @@ import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import useInfiniteScroll from "../../hooks/useInfiniteScroll";
-const defaultEndpoint = "https://rickandmortyapi.com/api/character";
+const defaultEndpoint = "https://rickandmortyapi.com/api/location";
 
 export async function getStaticProps() {
   const res = await fetch(defaultEndpoint);
@@ -71,15 +71,23 @@ const Locations = ({ data }) => {
       <Header />
       <main className="flex flex-col items-center justify-center flex-1">
         <section className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
-          {results.map(({ id, name, image }) => (
-            <Link key={id} href="/locations/[id]" as={`/characters/${id}`}>
-              <section>
-                <img
-                  src={image}
-                  className="rounded-2xl mr-10"
-                  alt="Location from Ricky and Morty"
-                />
+          {results.map(({ id, name, residents }) => (
+            <Link key={id} href="/locations/[id]" as={`/locations/${id}`}>
+              <section className="p-6 mt-6 text-left border rounded-xl hover:text-green-400">
                 <h3 className="text-4xl font-bold">{name}</h3>
+                <p className="mt-4 text-lg font-semibold">Residents</p>
+                {residents.map((resident, index) => (
+                  <section key={index} className="">
+                    <img
+                      src={`https://rickandmortyapi.com/api/character/avatar/${resident.match(
+                        /\d+/g,
+                      )}.jpeg`}
+                      width="10%"
+                      className="rounded-full"
+                      alt={`Resident from ${name}`}
+                    />
+                  </section>
+                ))}
               </section>
             </Link>
           ))}
