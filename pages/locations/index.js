@@ -62,7 +62,31 @@ const Locations = ({ data }) => {
     fetchData();
   }, [current]);
 
-  return <h1>Uma caralhada de localização</h1>;
+  return (
+    <>
+      <Head>
+        <title>Localizações</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Header />
+      <main className="flex flex-col items-center justify-center flex-1">
+        <section className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
+          {results.map(({ id, name, image }) => (
+            <Link key={id} href="/locations/[id]" as={`/characters/${id}`}>
+              <section>
+                <img
+                  src={image}
+                  className="rounded-2xl mr-10"
+                  alt="Location from Ricky and Morty"
+                />
+                <h3 className="text-4xl font-bold">{name}</h3>
+              </section>
+            </Link>
+          ))}
+        </section>
+      </main>
+    </>
+  );
 };
 
 export default Locations;
