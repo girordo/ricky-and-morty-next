@@ -76,9 +76,10 @@ const Locations = ({ data }) => {
               <section className="p-6 mt-6 text-left border rounded-xl hover:text-green-400">
                 <h3 className="text-4xl font-bold">{name}</h3>
                 <p className="mt-4 text-lg font-semibold">Residents</p>
-                {residents.map((resident, index) => (
-                  <section key={index} className="">
+                <section className="flex flex-row">
+                  {residents.map((resident, index) => (
                     <img
+                      key={index}
                       src={`https://rickandmortyapi.com/api/character/avatar/${resident.match(
                         /\d+/g,
                       )}.jpeg`}
@@ -86,8 +87,8 @@ const Locations = ({ data }) => {
                       className="rounded-full"
                       alt={`Resident from ${name}`}
                     />
-                  </section>
-                ))}
+                  ))}
+                </section>
               </section>
             </Link>
           ))}
