@@ -70,20 +70,20 @@ const Locations = ({ data }) => {
       </Head>
       <Header />
       <main className="flex flex-col items-center justify-center flex-1">
-        <section className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
+        <section className="grid grid-cols-1 gap-2 p-20 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
           {results.map(({ id, name, residents }) => (
             <Link key={id} href="/locations/[id]" as={`/locations/${id}`}>
               <section className="p-6 mt-6 text-left border rounded-xl hover:text-green-400">
                 <h3 className="text-4xl font-bold">{name}</h3>
                 <p className="mt-4 text-lg font-semibold">Residents</p>
-                <section className="flex flex-row">
+                <section className="grid grid-cols-4 gap-2">
                   {residents.map((resident, index) => (
                     <img
                       key={index}
                       src={`https://rickandmortyapi.com/api/character/avatar/${resident.match(
                         /\d+/g,
                       )}.jpeg`}
-                      width="10%"
+                      width="40%"
                       className="rounded-full"
                       alt={`Resident from ${name}`}
                     />
