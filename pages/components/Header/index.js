@@ -1,11 +1,27 @@
 import React from "react";
-import Link from "next/link";
 
 const Header = () => {
   return (
     <nav className="w-full h-24 sticky top-0 bg-gray-50 flex items-center justify-center border-b mb-10 shadow-lg font-semibold">
-      <Link href="/characters">Personagens</Link>
-      <Link href="/locations">Localizações</Link>
+      <section className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <section className="text-sm lg:flex-grow">
+          <a
+            href="/"
+            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            Home
+          </a>
+          <a
+            href="/characters"
+            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            Characters
+          </a>
+          <a
+            href="/locations"
+            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
+            Locations
+          </a>
+        </section>
+      </section>
     </nav>
   );
 };

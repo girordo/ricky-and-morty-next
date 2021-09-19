@@ -63,33 +63,37 @@ const Characters = ({ data }) => {
   }, [current]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <>
       <Head>
         <title>Rick and Morty API with Next</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="flex flex-col items-center justify-center flex-1 px-20 text-center mb-10">
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          {results.map(({ id, name, image, status, species, gender }) => (
-            <Link key={id} href="/characters/[id]" as={`/characters/${id}`}>
-              <a className="p-6 mt-6 text-left border rounded-xl hover:text-green-400 hover:border-green-400 focus:text-green-400 shadow-md transition-colors">
-                <img
-                  src={image}
-                  className="rounded-2xl mr-10"
-                  alt="Character from Rick and Morty"
-                />
-                <h3 className="text-2xl mt-4 font-bold">{name}</h3>
-                <p className="mt-4 text-lg">{status}</p>
-                <p className="text-lg">{species}</p>
-                <p className="text-lg">{gender}</p>
-              </a>
-            </Link>
-          ))}
-        </div>
+      <main className="p-36 grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-5 xl:gap-6">
+        {results.map(({ id, name, image, status, species, gender }) => (
+          <Link key={id} href="/characters/[id]" as={`/characters/${id}`}>
+            <section className="p-6 border rounded-xl hover:text-green-400 hover:border-green-400 focus:text-green-400 shadow-md transition-colors">
+              <img
+                src={image}
+                className="rounded-2xl"
+                alt="Character from Rick and Morty"
+              />
+              <h3 className="text-2xl mt-4 font-bold">{name}</h3>
+              <p className="text-lg flex flex-row">
+                Status: <p className="font-light">{status}</p>
+              </p>
+              <p className="text-lg flex flex-row">
+                Race: <p className="font-light">{species}</p>
+              </p>
+              <p className="text-lg flex flex-row">
+                Gender: <p className="font-light">{gender}</p>
+              </p>
+            </section>
+          </Link>
+        ))}
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 
