@@ -4,16 +4,14 @@ const Footer = () => {
   return (
     <>
       <footer className="flex justify-center items-center w-full h-24 border-t">
-        <div className="flex-col">
-          <a
-            className="flex"
-            href="https://netlify.com"
-            target="_blank"
-            rel="noopener noreferrer">
-            Powered by
-            <img src="/netlify.svg" alt="Netlify Logo" className="h-6 ml-2" />
-          </a>
-          <div className="flex mt-4">
+        <section className="flex flex-col items-center">
+          <img
+            src="/images/rick-and-morty-logo.png"
+            width="10%"
+            alt="Ricky and Morty logo"
+            className="block"
+          />
+          <section className="flex">
             <p>
               Made with
               <span aria-label="Heart Purple Emoji" role="img" className="mx-2">
@@ -28,8 +26,8 @@ const Footer = () => {
               rel="noreferrer">
               /girordo
             </a>
-          </div>
-        </div>
+          </section>
+        </section>
       </footer>
     </>
   );
