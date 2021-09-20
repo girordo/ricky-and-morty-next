@@ -7,17 +7,17 @@ const Header = () => {
         <section className="text-sm lg:flex-grow">
           <a
             href="/"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            className="block mt-4 mr-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-green-400 focus:text-green-400 transition-colors">
             Home
           </a>
           <a
             href="/characters"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            className="block mt-4 mr-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-green-400 focus:text-green-400 transition-colors">
             Characters
           </a>
           <a
             href="/locations"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
+            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-green-400 focus:text-green-400 transition-colors">
             Locations
           </a>
         </section>
